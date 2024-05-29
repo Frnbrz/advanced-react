@@ -1,5 +1,9 @@
+import Footer from '@/components/Footer'
+import Header from '@/components/Header'
+import HeaderHome from '@/components/HeaderHome'
 import { QueryClient } from '@tanstack/react-query'
-import { createRootRouteWithContext, Link, Outlet } from '@tanstack/react-router'
+import { createRootRouteWithContext, Outlet, useLocation } from '@tanstack/react-router'
+import { Toaster } from 'sonner'
 
 
 interface MyRouterContext {
@@ -11,34 +15,20 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
 })
 
 
-function NavBar() {
-  return (
-    <div className="p-2 flex gap-2">
-      <Link to="/" className="[&.active]:font-bold">
-        Home
-      </Link>{' '}
-      <Link to="/about" className="[&.active]:font-bold">
-        About
-      </Link>
-      <Link to="/expenses" className="[&.active]:font-bold">
-        Expenses
-      </Link>
-      <Link to="/create-expense" className="[&.active]:font-bold">
-        Create
-      </Link>
-      <Link to="/profile" className="[&.active]:font-bold">
-        Profile
-      </Link>
-    </div>
-  )
-}
+
+
+
 
 function Root() {
+  const lotacion = useLocation()
   return (
     <>
-      <NavBar />
-      <hr />
-      <Outlet />
+      <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
+        {lotacion.pathname === '/' ? <Header /> : <HeaderHome />}
+        <Outlet />
+        <Footer />
+      </div>
+      <Toaster />
     </>
   )
 }

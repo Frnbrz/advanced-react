@@ -1,3 +1,4 @@
+import Section from "@/components/Section"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -7,6 +8,7 @@ import { FieldApi, useForm } from '@tanstack/react-form'
 import { useQueryClient } from "@tanstack/react-query"
 import { createFileRoute, useNavigate } from '@tanstack/react-router'
 import { zodValidator } from '@tanstack/zod-form-adapter'
+import { toast } from "sonner"
 
 
 
@@ -57,11 +59,15 @@ function CreateExpense() {
           expenses: [newExpense, ...existingExpenses.expenses],
         })
 
-
+        toast("Expense Created", {
+          description: `Successfully created new expense: ${newExpense.id}`,
+        })
         // success state
       } catch (error) {
         // error state
-
+        toast("Error", {
+          description: `Failed to create new expense`,
+        })
       } finally {
         queryClient.setQueryData(loadingCreateExpenseQueryOptions.queryKey, {})
       }
@@ -69,8 +75,14 @@ function CreateExpense() {
   })
 
   return (
-    <div className="p-2">
-      <h2>Crear</h2>
+    <Section
+      className='pt-[12rem] -mt-[5.25rem]'
+      crosses
+      crossesOffset='lg:translate-y-[5.25rem]'
+      customPaddings='pt-[12rem] -mt-[5.25rem]'
+      id='create-expense'
+    >
+
       <form
         onSubmit={(e) => {
           e.preventDefault()
@@ -135,10 +147,7 @@ function CreateExpense() {
             </Button>
           )}
         />
-
-
-
       </form>
-    </div>
+    </Section>
   )
 }
