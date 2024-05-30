@@ -1,6 +1,5 @@
 export const infoJobs = [
   {
-    _id: '64955de573a1443a838654da',
     id: '5d9478959b481d9f9ccbbcf01005f7',
     title: 'Técnico/a de despliegue aplicaciones',
     company: 'Sopra Steria',
@@ -14,7 +13,6 @@ export const infoJobs = [
     img: 'company',
   },
   {
-    _id: '64955d6d73a1443a838654b1',
     id: 'b8f121a5904499a83faac096b1b01b',
     title: 'DESARROLLADOR SENIOR DE SOFTWARE (REMOTO)',
     company: 'Soltel',
@@ -28,7 +26,6 @@ export const infoJobs = [
     img: 'company',
   },
   {
-    _id: '64955d6d73a1443a838654ae',
     id: 'f5c744f3184292b72f74b364b5c8af',
     title: 'DevOps',
     company: 'LIBNOVA',
@@ -42,7 +39,6 @@ export const infoJobs = [
     img: 'company2',
   },
   {
-    _id: '64955cf573a1443a83865484',
     id: 'e38b4299a14db9a14b6bd5ad6a0cbe',
     title: 'Junior Fullstack Developer',
     company: 'Etalentum Group',
@@ -56,7 +52,6 @@ export const infoJobs = [
     img: 'company3',
   },
   {
-    _id: '64955c7d73a1443a8386545c',
     id: '12e19d60ad4c25abb70eca7304ab4f',
     title: 'Perfil SAS',
     company: 'ALVEA SOLUCIONES TECNOLOGICAS, S.L.',
@@ -72,7 +67,6 @@ export const infoJobs = [
     img: 'company4',
   },
   {
-    _id: '64955c0573a1443a8386542f',
     id: 'ef7bde38c3421aa10fe9fec8210ec0',
     title:
       'Programador de aplicaciones web con Visual Studio .Net y SQL Server.',
@@ -100,7 +94,6 @@ export const infoJobs = [
     img: 'company',
   },
   {
-    _id: '64955b1573a1443a838653da',
     id: 'b6d80ac820463b8994558134f1f51a',
     title: 'Líder técnico Java_Francés alto',
     company: 'CGI',
@@ -125,7 +118,6 @@ export const infoJobs = [
     img: 'company2',
   },
   {
-    _id: '64955a2573a1443a83865386',
     id: 'dacd7145324680b23e3368c3651294',
     title: 'Desarrollador/maquetador web (H/M/X)',
     company: 'Experis IT',
@@ -150,7 +142,6 @@ export const infoJobs = [
     img: 'company3',
   },
   {
-    _id: '6495584573a1443a838652dc',
     id: '64f25964b34c61ae2524e3759369e5',
     title: 'Programador PHP + Maquetador web',
     company: 'Tijuana Road SL',
@@ -176,7 +167,6 @@ export const infoJobs = [
     img: 'company4',
   },
   {
-    _id: '6495571873a1443a83865273',
     id: '319132510041989c2918bfb4da5890',
     title: 'Senior Software Engineer (100% remoto)',
     company: 'Innovation Strategies S.L.U. - A Siemens Company',
@@ -190,7 +180,6 @@ export const infoJobs = [
     img: 'company5',
   },
   {
-    _id: '649556e573a1443a8386525c',
     id: 'ff57213f1341138d1384a4cabd3524',
     title: 'Maquetador/a Web Liferay - HÍBRIDO MADRID',
     company: 'Aubay',
@@ -204,7 +193,6 @@ export const infoJobs = [
     img: 'company6',
   },
   {
-    _id: '649555ed73a1443a83865202',
     id: 'a8cdc03cc24bc0a2b6d4a95f515ec4',
     title: 'Programador/a .NET',
     company: 'Clubs de Fitness DiR',
@@ -218,7 +206,6 @@ export const infoJobs = [
     img: 'company7',
   },
   {
-    _id: '649554fe73a1443a838651b3',
     id: '7adc71dde1418b8b934830697a6e31',
     title: 'Administrador/a de Sistemas y/o Aplicaciones',
     company: 'Indra Sistemas',
@@ -239,7 +226,6 @@ export const infoJobs = [
     img: 'company8',
   },
   {
-    _id: '6495540d73a1443a83865156',
     id: 'b79323a2ee438abe2fc552c3244daf',
     title: 'Desarrollador Front Angular-Riesgos (100% Remoto)',
     company: 'BSDENTERPRISE',
@@ -255,7 +241,6 @@ export const infoJobs = [
     img: 'company',
   },
   {
-    _id: '6495539573a1443a8386512c',
     id: '86067eced2474bb7c8c681d1964a89',
     title: 'Devops - 100% Teletrabajo',
     company: 'SANDAV',
@@ -281,7 +266,6 @@ export const infoJobs = [
     img: 'company2',
   },
   {
-    _id: '6495531d73a1443a83865102',
     id: '6e06b556194be1b6869d1652a23a4a',
     title: 'Cloud Technical leader',
     company: 'K-Infotec Sistemas',
@@ -297,7 +281,6 @@ export const infoJobs = [
     img: 'company3',
   },
   {
-    _id: '649551b573a1443a83865089',
     id: '8b7a68c242454486e2acb0a1027ca7',
     title: 'DESARROLLADOR/A J2EE/.NET',
     company: 'R & C Associats',
@@ -317,7 +300,6 @@ export const infoJobs = [
     img: 'company4',
   },
   {
-    _id: '649550c673a1443a83865033',
     id: '62cb6d22584ce3b8ff4b8f98cf0719',
     title: 'Senior Security Engineer Cloud Applications',
     company: 'B. Braun, Grupo',
@@ -331,7 +313,6 @@ export const infoJobs = [
     img: 'company5',
   },
   {
-    _id: '64954f6073a1443a83864fb9',
     id: '3691ee3d4544b08776b46cca9dab33',
     title: 'Project Manager IT (.Net Core / Azure)',
     company: 'NOVABASE – NEOTALENT ESPAÑA.',
@@ -352,7 +333,6 @@ export const infoJobs = [
     img: 'company6',
   },
   {
-    _id: '64954f6073a1443a83864fb6',
     id: 'caa61e21b84339979da622316fbbd6',
     title: 'Analista Programador/a Java',
     company: 'NexTReT',
@@ -368,7 +348,6 @@ export const infoJobs = [
     img: 'company7',
   },
   {
-    _id: '64954f5f73a1443a83864fb3',
     id: 'e2eba5f1964001b67e57dd3e9bd2bb',
     title: 'DESARROLLADORES FULLSTACK JAVA/J2EE y/o .NET',
     company: 'AGMSOFT Consulting',
@@ -390,7 +369,6 @@ export const infoJobs = [
     img: 'company8',
   },
   {
-    _id: '64954ee773a1443a83864f8a',
     id: '73ac6fb75a4ca0aabc0a0315a241db',
     title: 'Programador fullstack React (Zaragoza)',
     company: 'ENTELGY - Resto de España',
@@ -404,7 +382,6 @@ export const infoJobs = [
     img: 'company',
   },
   {
-    _id: '64954e3173a1443a83864f43',
     id: '8d710f3c6a4f37afb601c78c2e630d',
     title: 'Analista Programador',
     company: 'Uritec SL',
@@ -418,7 +395,6 @@ export const infoJobs = [
     img: 'company2',
   },
   {
-    _id: '64954d7d73a1443a83864efe',
     id: 'd5ca037117436db2a96f4944e0f234',
     title: 'Administrador Sistemas Linux - Python',
     company: 'DIGI SPAIN TELECOM',
@@ -440,7 +416,6 @@ export const infoJobs = [
     img: 'company3',
   },
   {
-    _id: '64954b9d73a1443a83864e5b',
     id: 'e3cd6ea2b34d2da3ade31e0436e9d7',
     title: 'QA Automatización Mobile (Teletrabajo)',
     company: 'ACCUDE TI',
@@ -465,7 +440,6 @@ export const infoJobs = [
     img: 'company4',
   },
   {
-    _id: '64954b2573a1443a83864e31',
     id: '34631069a1419d879d2a20c232f4d3',
     title: 'Desarrolladores/as Oracle SOA',
     company: 'VIEWNEXT  Profesionales',
@@ -479,7 +453,6 @@ export const infoJobs = [
     img: 'company5',
   },
   {
-    _id: '64954aae73a1443a83864e06',
     id: '73c082b190415fb1ee5b3942811239',
     title: 'PROGRAMADOR/A C #.',
     company: 'ASSISTA',
@@ -501,7 +474,6 @@ export const infoJobs = [
     img: 'company6',
   },
   {
-    _id: '64954aae73a1443a83864e03',
     id: '78ed57a5f349818b03cf2c701b0320',
     title: 'Analista Programador Java/ Spring boot 100% Teletrabajo',
     company: 'knowmad Mood',
@@ -515,7 +487,6 @@ export const infoJobs = [
     img: 'company7',
   },
   {
-    _id: '64954a3573a1443a83864dd4',
     id: '18c27690a24252b2ac14283442bd2a',
     title: 'Software Engineer',
     company: 'ORBITAL GRUPO CAF',
@@ -529,7 +500,6 @@ export const infoJobs = [
     img: 'company8',
   },
   {
-    _id: '649549bd73a1443a83864daa',
     id: '45dfb6443349fab1816315322f423d',
     title: 'ANALISTA PROGRAMADOR FULL STACK, REMOTO!!',
     company: 'Soltel',
@@ -556,7 +526,6 @@ export const infoJobs = [
     img: 'company',
   },
   {
-    _id: '6495494673a1443a83864d82',
     id: '70d72e30b44a199c9837cba76d21a3',
     title: 'Operador/a de Sistemas (Híbrido Granada)',
     company: 'KEAPPS',
@@ -572,7 +541,6 @@ export const infoJobs = [
     img: 'company2',
   },
   {
-    _id: '649548cd73a1443a83864d54',
     id: 'e9fc0febea4155b1cdbe3de4c3b0bf',
     title: 'Programador Java/ Spring boot 100% Remoto',
     company: 'knowmad Mood',
@@ -586,7 +554,6 @@ export const infoJobs = [
     img: 'company3',
   },
   {
-    _id: '6495485573a1443a83864d2a',
     id: '85a272e56442bc82d445d3940e498d',
     title: 'Ingeniero Software Java/ Microservicios 100% Remoto',
     company: 'knowmad Mood',
@@ -600,7 +567,6 @@ export const infoJobs = [
     img: 'company4',
   },
   {
-    _id: '649546f073a1443a83864cb1',
     id: '3e6865dd7545139355c0b6f64c0200',
     title: 'Administrador de Sistemas Windows',
     company: 'GRUPO NS',
@@ -614,7 +580,6 @@ export const infoJobs = [
     img: 'company5',
   },
   {
-    _id: '649546ef73a1443a83864cae',
     id: 'f2fc2317f642e88053614239c37ffd',
     title: 'Data Scientist',
     company: 'INETUM Norte',
@@ -628,7 +593,6 @@ export const infoJobs = [
     img: 'company6',
   },
   {
-    _id: '649546ed73a1443a83864ca8',
     id: '34ee599fa84be3aacde7f9903d71f2',
     title: 'Mobile Applications Engineer',
     company: 'K-Infotec Sistemas',
@@ -644,7 +608,6 @@ export const infoJobs = [
     img: 'company7',
   },
   {
-    _id: '6495467573a1443a83864c7e',
     id: '95a9e6827947aba52041ed27eb99b8',
     title: 'Programador Java/ Spring boot 100% Teletrabajo',
     company: 'knowmad Mood',
@@ -658,7 +621,6 @@ export const infoJobs = [
     img: 'company8',
   },
   {
-    _id: '6495450e73a1443a83864c08',
     id: '9d302605654b62a145bcb53bda3a1d',
     title:
       'DESARROLLADOR PYTHON, JAVA. SEVILLA. HIBRIDO, PRINCIPALMENTE REMOTO.',
@@ -675,7 +637,6 @@ export const infoJobs = [
     img: 'company8',
   },
   {
-    _id: '6495450d73a1443a83864c05',
     id: 'ca6f32d3ed4f65888eae5519563cdf',
     title: 'Experto/a Técnico con Drupal y CKAN',
     company: 'Consultoría y TI - INECO',
@@ -697,7 +658,6 @@ export const infoJobs = [
     img: 'company8',
   },
   {
-    _id: '6495450d73a1443a83864c01',
     id: 'b6053c191340918b2780aff7040ae5',
     title:
       'Desarrollador .NET     -       Teletrabajo 100% o híbrido ¡Tú eliges!',
@@ -712,7 +672,6 @@ export const infoJobs = [
     img: 'company8',
   },
   {
-    _id: '6495441e73a1443a83864bad',
     id: 'e3ecbf27364e799b303ed355c89d67',
     title: 'Profesionales Java Backend',
     company: 'GRUPO NS',
@@ -726,7 +685,6 @@ export const infoJobs = [
     img: 'company8',
   },
   {
-    _id: '6495441d73a1443a83864baa',
     id: 'ea5d85de284ee9b4eb2eaee349682c',
     title: 'Programadores Senior PLSQL Oracle. Inglés.',
     company: 'GRUPO NS',
@@ -745,7 +703,6 @@ export const infoJobs = [
     img: 'company8',
   },
   {
-    _id: '649543a573a1443a83864b81',
     id: 'a59b5c4ba340e3a75d2559e3e4966e',
     title: 'Consultor/ BI: Power BI, Dax, SQL',
     company: 'SOLUTIO',
@@ -761,7 +718,6 @@ export const infoJobs = [
     img: 'company8',
   },
   {
-    _id: '649543a573a1443a83864b7e',
     id: 'd6d9aa3908469e869ed3ae7680db02',
     title: 'Lead Data Scientist (IA) (,)',
     company: 'BETWEEN Technology',
@@ -777,7 +733,6 @@ export const infoJobs = [
     img: 'company8',
   },
   {
-    _id: '6495432d73a1443a83864b58',
     id: 'a2cd5707a54cf2bdf791974c1b784d',
     title: 'Analista Programador/a | NORKOM | BANCA - Madrid/teletrabajo',
     company: 'KRELL CONSULTING & TRAINING',
@@ -803,7 +758,6 @@ export const infoJobs = [
     img: 'company8',
   },
   {
-    _id: '649542b873a1443a83864b2f',
     id: 'c357e9f6344bfba874913f698c82f4',
     title: 'Analista programador/a Java',
     company: 'NTT DATA ofertas de empleo profesionales',
@@ -817,7 +771,6 @@ export const infoJobs = [
     img: 'company8',
   },
   {
-    _id: '649542b873a1443a83864b2c',
     id: '52e03d6fe04f0183f72b6c12a47c5a',
     title: 'Desarrollador PHP/Laravel',
     company: 'HOLA CONSULTORES SL.',
@@ -831,7 +784,6 @@ export const infoJobs = [
     img: 'company8',
   },
   {
-    _id: '649542b773a1443a83864b29',
     id: '73b1192dad469b9a25f41cb2be8454',
     title: 'React developer',
     company: 'NTT DATA ofertas de empleo profesionales',
@@ -845,7 +797,6 @@ export const infoJobs = [
     img: 'company8',
   },
   {
-    _id: '649542b773a1443a83864b26',
     id: '51a6839d584f808610fb7a080249a7',
     title: 'Desarrollador/a front-end',
     company: 'NTT DATA ofertas de empleo profesionales',
@@ -867,7 +818,6 @@ export const infoJobs = [
     img: 'company8',
   },
   {
-    _id: '649542b673a1443a83864b23',
     id: '5ad876c58b4d1aa0b79ae978b3ba63',
     title: 'Analista programador/a .NET',
     company: 'NTT DATA ofertas de empleo profesionales',
@@ -887,7 +837,6 @@ export const infoJobs = [
     img: 'company8',
   },
   {
-    _id: '649542b673a1443a83864b20',
     id: 'aeada018a94c9395be68de35c5de28',
     title: 'Fullstack developer',
     company: 'NTT DATA ofertas de empleo profesionales',
@@ -909,7 +858,6 @@ export const infoJobs = [
     img: 'company8',
   },
   {
-    _id: '649542b473a1443a83864b1a',
     id: 'c956f5212f4269b22af1d67f3d4999',
     title: 'Operador/a de sistemas Mainframe',
     company: 'CMV Consultores',
@@ -923,7 +871,6 @@ export const infoJobs = [
     img: 'company8',
   },
   {
-    _id: '649541c673a1443a83864acb',
     id: 'b1e6cc2c0f4635bff226c3e8d0c066',
     title: 'Consultor/a SQL  (,)',
     company: 'BETWEEN Technology',
@@ -939,7 +886,6 @@ export const infoJobs = [
     img: 'company8',
   },
   {
-    _id: '649541c573a1443a83864ac5',
     id: 'e8f0e66e034739b8cf750142c15273',
     title: 'Administrador/a Cloud Azure',
     company: 'CMV Consultores',
@@ -953,7 +899,6 @@ export const infoJobs = [
     img: 'company8',
   },
   {
-    _id: '64953f6d73a1443a838649f0',
     id: '0813d3c88b4a3187cc9533d8529550',
     title: 'Desarrollador/a Javascript, React y Python - Híbrido (Valencia)',
     company: 'SANDAV',
