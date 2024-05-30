@@ -96,6 +96,12 @@ export const navigationHome = [
     title: 'Profile',
     url: '/profile',
   },
+  {
+    id: '4',
+    title: 'Empezar',
+    url: '/home',
+    onlyMobile: true,
+  },
 ]
 
 export const heroIcons = [homeSmile, file02, searchMd, plusSquare]

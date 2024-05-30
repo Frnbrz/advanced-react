@@ -62,6 +62,15 @@ import notification2 from './notification/image-2.png'
 import notification3 from './notification/image-3.png'
 import notification4 from './notification/image-4.png'
 
+import company from './companies/company.jpeg'
+import company2 from './companies/company2.jpeg'
+import company3 from './companies/company3.jpeg'
+import company4 from './companies/company4.jpeg'
+import company5 from './companies/company5.jpeg'
+import company6 from './companies/company6.jpeg'
+import company7 from './companies/company7.jpeg'
+import company8 from './companies/company8.jpeg'
+
 import benefitCard1 from './benefits/card-1.svg'
 import benefitCard2 from './benefits/card-2.svg'
 import benefitCard3 from './benefits/card-3.svg'
@@ -101,6 +110,14 @@ export {
   chromecast,
   code,
   coins,
+  company,
+  company2,
+  company3,
+  company4,
+  company5,
+  company6,
+  company7,
+  company8,
   curve,
   curve1,
   curve2,

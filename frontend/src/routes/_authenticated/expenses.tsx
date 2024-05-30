@@ -1,3 +1,4 @@
+import Section from "@/components/Section"
 import { Button } from "@/components/ui/button"
 import { Skeleton } from '@/components/ui/skeleton'
 import {
@@ -31,63 +32,69 @@ function Expenses() {
   if (error) return <div>Error: {error.message}</div>
 
   return (
-    <Table>
-      <TableHeader>
-        <TableRow>
-          <TableHead className='w-[100px]'>ID</TableHead>
-          <TableHead>Amoiut</TableHead>
-          <TableHead>Method</TableHead>
-          <TableHead>Delete</TableHead>
-        </TableRow>
-      </TableHeader>
-      <TableBody>
-        {loadingCreateExpense?.expense && (
+    <Section
+      id="expenses"
+      className='flex justify-center w-full'
+      crossesOffset='lg:translate-y-[5.25rem]'
+    >
+      <Table className='max-w-max m-auto '>
+        <TableHeader>
           <TableRow>
-            <TableCell className='font-medium'>
-              <Skeleton className='h-3' />
-            </TableCell>
-            <TableCell>
-              <Skeleton className='h-3' />
-            </TableCell>
-            <TableCell>
-              <Skeleton className='h-3' />
-            </TableCell>
-            <TableCell>
-              <Skeleton className='h-3' />
-            </TableCell>
+            <TableHead className='w-[100px]'>ID</TableHead>
+            <TableHead>Amoiut</TableHead>
+            <TableHead>Method</TableHead>
+            <TableHead>Delete</TableHead>
           </TableRow>
-        )}
-        {isPending
-          ? Array(3)
-            .fill(0)
-            .map((_, i) => (
-              <TableRow key={i}>
-                <TableCell>
-                  <Skeleton className='h-4' />
-                </TableCell>
-                <TableCell>
-                  <Skeleton className='h-4' />
-                </TableCell>
-                <TableCell>
-                  <Skeleton className='h-4' />
-                </TableCell>
-                <TableCell>
-                  <Skeleton className='h-4' />
-                </TableCell>
-              </TableRow>
-            ))
-          : data?.expenses.map(expense => (
-            <TableRow key={expense.id}>
-              <TableCell>{expense.id}</TableCell>
-              <TableCell>{expense.description}</TableCell>
-              <TableCell>{expense.amount}</TableCell>
+        </TableHeader>
+        <TableBody>
+          {loadingCreateExpense?.expense && (
+            <TableRow>
+              <TableCell className='font-medium'>
+                <Skeleton className='h-3' />
+              </TableCell>
               <TableCell>
-                <ExpenseDeleteButton id={expense.id} />
+                <Skeleton className='h-3' />
+              </TableCell>
+              <TableCell>
+                <Skeleton className='h-3' />
+              </TableCell>
+              <TableCell>
+                <Skeleton className='h-3' />
               </TableCell>
             </TableRow>
-          ))}
-      </TableBody>
-    </Table>
+          )}
+          {isPending
+            ? Array(3)
+              .fill(0)
+              .map((_, i) => (
+                <TableRow key={i}>
+                  <TableCell>
+                    <Skeleton className='h-4' />
+                  </TableCell>
+                  <TableCell>
+                    <Skeleton className='h-4' />
+                  </TableCell>
+                  <TableCell>
+                    <Skeleton className='h-4' />
+                  </TableCell>
+                  <TableCell>
+                    <Skeleton className='h-4' />
+                  </TableCell>
+                </TableRow>
+              ))
+            : data?.expenses.map(expense => (
+              <TableRow key={expense.id}>
+                <TableCell>{expense.id}</TableCell>
+                <TableCell>{expense.description}</TableCell>
+                <TableCell>{expense.amount}</TableCell>
+                <TableCell>
+                  <ExpenseDeleteButton id={expense.id} />
+                </TableCell>
+              </TableRow>
+            ))}
+        </TableBody>
+      </Table>
+    </Section>
   )
 }
 

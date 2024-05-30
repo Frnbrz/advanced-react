@@ -37,6 +37,21 @@ export const getAllExpensesQueryOptions = queryOptions({
   staleTime: 1000 * 60 * 5, // 5 minutes
 })
 
+export async function getAllJobs() {
+  const res = await api.jobs.$get()
+  if (!res.ok) {
+    throw new Error('Failed to fetch data')
+  }
+  const data = await res.json()
+  return data
+}
+
+export const getAllJobsOptions = queryOptions({
+  queryKey: ['get-all-jobs'],
+  queryFn: getAllJobs,
+  staleTime: 1000 * 60 * 5, // 5 minutes
+})
+
 export async function createExpense({ value }: { value: CreateExpense }) {
   await new Promise(resolve => setTimeout(resolve, 3000))
   const res = await api.expenses.$post({ json: value })

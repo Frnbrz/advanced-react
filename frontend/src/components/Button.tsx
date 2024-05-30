@@ -12,9 +12,9 @@ interface ButtonProps {
 }
 
 function Button({ className, href, onClick, children, px, white, isLoading, animate }: ButtonProps) {
-  const classes = `button relative inline-flex items-center justify-center h-11 transition-colors hover:text-color-1 ${px || "px-6"
+  const classes = `button relative inline-flex items-center justify-center h-11 transition-colors hover:text-color-1 ${px || "px-4"
     } ${white ? "text-n-8" : "text-n-1"} ${className || ""}
-    hover:bg-n-8 hover:bg-opacity-10 rounded-[2.5rem] text-n-1 font-bold text-sm lg:text-base lg:px-8 lg:py-4 lg:rounded-[3.5rem] lg:font-bold lg:text-lg lg:leading-6 lg:tracking-[0.02em] lg:font-bold lg:uppercase lg:transition-colors transition ease-in-out delay-150 
+    hover:bg-n-8 hover:bg-opacity-10 rounded-[2.5rem] text-n-1 font-bold text-sm lg:text-base lg:px-4 lg:py-2 lg:rounded-[3.5rem] lg:font-bold lg:text-lg lg:leading-6 lg:tracking-[0.02em] lg:font-bold lg:uppercase lg:transition-colors transition ease-in-out delay-150 
     
     min-w-[8rem] 
     ${animate ? "hover:-translate-y-1 hover:scale-110  duration-300" : ""}
