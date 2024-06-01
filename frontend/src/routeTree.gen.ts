@@ -12,7 +12,6 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as HomeImport } from './routes/home'
-import { Route as AboutImport } from './routes/about'
 import { Route as AuthenticatedImport } from './routes/_authenticated'
 import { Route as IndexImport } from './routes/index'
 import { Route as AuthenticatedProfileImport } from './routes/_authenticated/profile'
@@ -23,11 +22,6 @@ import { Route as AuthenticatedCreateExpenseImport } from './routes/_authenticat
 
 const HomeRoute = HomeImport.update({
   path: '/home',
-  getParentRoute: () => rootRoute,
-} as any)
-
-const AboutRoute = AboutImport.update({
-  path: '/about',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -76,13 +70,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedImport
       parentRoute: typeof rootRoute
     }
-    '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutImport
-      parentRoute: typeof rootRoute
-    }
     '/home': {
       id: '/home'
       path: '/home'
@@ -123,7 +110,6 @@ export const routeTree = rootRoute.addChildren({
     AuthenticatedExpensesRoute,
     AuthenticatedProfileRoute,
   }),
-  AboutRoute,
   HomeRoute,
 })
 
@@ -137,7 +123,6 @@ export const routeTree = rootRoute.addChildren({
       "children": [
         "/",
         "/_authenticated",
-        "/about",
         "/home"
       ]
     },
@@ -151,9 +136,6 @@ export const routeTree = rootRoute.addChildren({
         "/_authenticated/expenses",
         "/_authenticated/profile"
       ]
-    },
-    "/about": {
-      "filePath": "about.tsx"
     },
     "/home": {
       "filePath": "home.tsx"

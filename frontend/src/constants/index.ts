@@ -77,11 +77,6 @@ export const navigation = [
 
 export const navigationHome = [
   {
-    id: '0',
-    title: 'About',
-    url: '/about',
-  },
-  {
     id: '1',
     title: 'Expenses',
     url: '/expenses',

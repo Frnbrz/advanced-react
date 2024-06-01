@@ -1,4 +1,6 @@
 import Button from '@/components/Button'
+import { userQueryOptions } from '@/lib/api'
+import { useQuery } from '@tanstack/react-query'
 import { Link, useLocation } from '@tanstack/react-router'
 import { useState } from 'react'
 import { disablePageScroll, enablePageScroll } from 'scroll-lock'
@@ -14,6 +16,8 @@ function HeaderHome() {
   const [openNavigation, setOpenNavigation] = useState(false)
   const location = useLocation()
   const paths = ['/login', '/signup']
+  const { data } = useQuery(userQueryOptions)
+
 
   const toggleNavigation = () => {
     if (openNavigation) {
@@ -32,7 +36,9 @@ function HeaderHome() {
     setOpenNavigation(false)
   }
 
+
   return (
+
     <div
       className={`fixed top-0 left-0 w-full z-50  border-b border-n-6 lg:bg-n-8/90 lg:backdrop-blur-sm ${openNavigation ? 'bg-n-8' : 'bg-n-8/90 backdrop-blur-sm'
         }`}
@@ -52,7 +58,7 @@ function HeaderHome() {
                   key={item.id}
                   to={item.url}
                   onClick={handleClick}
-                  className={`[&.active]:font-bold block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 
+                  className={`block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 ${item.onlyMobile ? 'lg:hidden' : ''
                     } px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-xs lg:font-semibold ${item.url === pathname.hash
                       ? 'z-2 lg:text-n-1'
                       : 'lg:text-n-1/50'
@@ -67,12 +73,20 @@ function HeaderHome() {
           </nav>
         )}
         <div className='flex items-center'>
-          <a className='hidden lg:flex' href='/api/register'>
-            Crear cuenta
-          </a>
-          <Button className='hidden lg:flex ml-4' href='/api/login' white>
-            Empezar
-          </Button>
+
+          {data?.user ? (
+            <Button className='hidden lg:flex ml-4' href='/api/logout' white>
+              Cerrar sesión
+            </Button>
+          ) : (<>
+            <a className='hidden lg:flex' href='/api/register'>
+              Crear cuenta
+            </a>
+            <Button className='hidden lg:flex ml-4' href='/api/login' white>
+              Empezar
+            </Button>
+          </>
+          )}
 
           <Button
             className='ml-auto lg:hidden'

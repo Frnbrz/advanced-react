@@ -8,3 +8,11 @@ export const createExpenseSchema = insertExpensesSchema.omit({
 })
 
 export type CreateExpense = z.infer<typeof createExpenseSchema>
+
+export const createJobSchema = insertExpensesSchema.omit({
+  userId: true,
+  createdAt: true,
+  id: true,
+})
+
+export type CreateJob = z.infer<typeof createExpenseSchema>

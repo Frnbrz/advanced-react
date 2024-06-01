@@ -23,6 +23,40 @@ function Home() {
 
   if (error) return <div>Error: {error.message}</div>
 
+  // function async navigateMoreInfo() {
+  //    const existingExpenses = await queryClient.ensureQueryData(
+  //       getAllExpensesQueryOptions
+  //     )
+
+  //     navigate({ to: "/expenses" })
+
+  //     // loading state
+  //     queryClient.setQueryData(loadingCreateExpenseQueryOptions.queryKey, {
+  //       expense: value,
+  //     })
+
+  //     try {
+  //       const newExpense = await createExpense({ value })
+
+  //       queryClient.setQueryData(getAllExpensesQueryOptions.queryKey, {
+  //         ...existingExpenses,
+  //         expenses: [newExpense, ...existingExpenses.expenses],
+  //       })
+
+  //       toast("Expense Created", {
+  //         description: `Successfully created new expense: ${newExpense.id}`,
+  //       })
+  //       // success state
+  //     } catch (error) {
+  //       // error state
+  //       toast("Error", {
+  //         description: `Failed to create new expense`,
+  //       })
+  //     } finally {
+  //       queryClient.setQueryData(loadingCreateExpenseQueryOptions.queryKey, {})
+  //     }
+  //   }
+
   return (
     <Section
       className='flex justify-center w-full'
@@ -39,7 +73,7 @@ function Home() {
               .map((_, i) => (
                 <Card
                   key={i}
-                  className='w-full max-w-[40rem] border border-n-6 rounded-[2.4375rem] overflow-hidden h-full space-x-5 bg-conic-gradient'
+                  className='w-full max-w-[40rem] border border-n-6 rounded-[2.4375rem] overflow-hidden h-full space-x-5 '
                 >
                   <CardHeader>
                     <CardTitle className='text-lg text-n-1 font-semibold'>

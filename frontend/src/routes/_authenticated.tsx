@@ -1,3 +1,5 @@
+import Button from '@/components/Button'
+import Section from '@/components/Section'
 import { userQueryOptions } from '@/lib/api'
 import { createFileRoute, Outlet } from '@tanstack/react-router'
 
@@ -32,9 +34,12 @@ function Component() {
 
 function Login() {
   return (
-    <div className="p-2">
-      <h3>Usuario no logeado</h3>
-      <a href="/api/login">Login</a>
-    </div>
+    <Section className='flex justify-center w-full h-[80vh]' crossesOffset='lg:translate-y-[5.25rem]' id='login'>
+      <div className='flex flex-col gap-5 '>
+
+        <h3>Usuario no logeado</h3>
+        <Button white href="/api/login">Login</Button>
+      </div>
+    </Section>
   )
 }

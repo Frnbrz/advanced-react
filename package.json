@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "start": "bun server/index.ts",
-    "dev": "bun --watch server/index.ts"
+    "dev": "bun --watch server/index.ts",
+    "drizzle": "bunx drizzle-kit studio"
   },
   "devDependencies": {
     "@types/bun": "latest",
