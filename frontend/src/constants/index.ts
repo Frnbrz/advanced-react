@@ -78,8 +78,8 @@ export const navigation = [
 export const navigationHome = [
   {
     id: '1',
-    title: 'Expenses',
-    url: '/expenses',
+    title: 'Jobs',
+    url: '/jobs',
   },
   {
     id: '2',

@@ -1,5 +1,5 @@
 import { type ApiRoutes } from '@server/app'
-import { type CreateExpense } from '@server/sharedTypes'
+import { type CreateExpense, type CreateJob } from '@server/sharedTypes'
 import { queryOptions } from '@tanstack/react-query'
 import { hc } from 'hono/client'
 
@@ -38,6 +38,7 @@ export const getAllExpensesQueryOptions = queryOptions({
 })
 
 export async function getAllJobs() {
+  await new Promise(resolve => setTimeout(resolve, 3000))
   const res = await api.jobs.$get()
   if (!res.ok) {
     throw new Error('Failed to fetch data')
@@ -46,7 +47,7 @@ export async function getAllJobs() {
   return data
 }
 
-export const getAllJobsOptions = queryOptions({
+export const getAllJobsQueryOptions = queryOptions({
   queryKey: ['get-all-jobs'],
   queryFn: getAllJobs,
   staleTime: 1000 * 60 * 5, // 5 minutes
@@ -63,10 +64,53 @@ export async function createExpense({ value }: { value: CreateExpense }) {
   return newExpense
 }
 
+export async function createJob({ value }: { value: CreateJob }) {
+  await new Promise(resolve => setTimeout(resolve, 3000))
+  const res = await api.jobs.$post({ json: value })
+
+  if (!res.ok) {
+    throw new Error('Failed to create expense')
+  }
+  const newJob = await res.json()
+  return newJob
+}
+
+export async function getJobById(id: number) {
+  await new Promise(resolve => setTimeout(resolve, 3000))
+  const res = await api.jobs.$get({ param: { id: id.toString() } })
+
+  if (!res.ok) {
+    throw new Error('Failed to fetch job by id')
+  }
+  const job = await res.json()
+  return job
+}
+
 export const loadingCreateExpenseQueryOptions = queryOptions<{
   expense?: CreateExpense
 }>({
   queryKey: ['loading-create-expense'],
+  queryFn: async () => {
+    return {}
+  },
+  staleTime: Infinity,
+})
+
+export async function navigateJobDetails({ job }: { job: CreateJob }) {
+  await new Promise(resolve => setTimeout(resolve, 3000))
+  const res = await api.jobs.$post({ json: job })
+
+  if (!res.ok) {
+    throw new Error('Failed to create expense')
+  }
+  const newJob = await res.json()
+  return newJob
+}
+
+export const loadingJobsNavigationOptions = queryOptions<{
+  job?: CreateJob
+}>({
+  queryKey: ['loading-jobs-navigation'],
   queryFn: async () => {
     return {}
   },

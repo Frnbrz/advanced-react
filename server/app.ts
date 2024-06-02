@@ -2,6 +2,7 @@ import { Hono } from 'hono'
 import { serveStatic } from 'hono/bun'
 import { logger } from 'hono/logger'
 import { authRoute } from './routes/auth'
+import { chatbotRoute } from './routes/chatbot'
 import { expensesRoute } from './routes/expenses'
 import { jobsRoute } from './routes/jobs'
 
@@ -13,6 +14,7 @@ const apiRoutes = app
   .basePath('/api')
   .route('/expenses', expensesRoute)
   .route('/jobs', jobsRoute)
+  .route('/chatbot', chatbotRoute)
   .route('/', authRoute)
 
 app.use('*', serveStatic({ root: './frontend/dist' }))

@@ -1,6 +1,7 @@
 import ButtonSvg from "../assets/svg/ButtonSvg"
 
 interface ButtonProps {
+  type?: 'button' | 'submit' | 'reset'
   className?: string
   href?: string
   onClick?: () => void
@@ -10,9 +11,10 @@ interface ButtonProps {
   isLoading?: boolean
   animate?: boolean
   outline?: boolean
+  disabled?: boolean
 }
 
-function Button({ className, href, onClick, children, px, white, isLoading, animate, outline }: ButtonProps) {
+function Button({ type = 'submit', className, href, onClick, children, px, white, isLoading, animate, outline, disabled }: ButtonProps) {
   const classes = `button relative inline-flex items-center justify-center h-11 transition-colors hover:text-color-1 ${px || "px-4"
     } ${white ? "text-n-8" : "text-n-1"} ${className || ""}
     hover:bg-n-8 hover:bg-opacity-10 rounded-[2.5rem] text-n-1 font-bold text-sm lg:text-base lg:px-2 lg:py-1 lg:rounded-[3.5rem] lg:font-bold lg:text-md lg:leading-6 lg:tracking-[0.02em] lg:font-bold lg:uppercase lg:transition-colors transition ease-in-out delay-150 
@@ -29,7 +31,10 @@ function Button({ className, href, onClick, children, px, white, isLoading, anim
 
   const renderButton = () => (
     <button className={classes} onClick={onClick}
-      disabled={isLoading}>
+      disabled={isLoading || disabled}
+      type={type}
+
+    >
 
       {
         isLoading ? (

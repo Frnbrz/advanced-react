@@ -23,7 +23,7 @@ export const expensesRoute = new Hono()
       .orderBy(desc(expenseTable.createdAt))
       .limit(100)
 
-    return c.json({ expenses: expenses })
+    return c.json({ expenses })
   })
   .post('/', getUser, zValidator('json', createExpenseSchema), async c => {
     const expense = await c.req.valid('json')

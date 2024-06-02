@@ -44,7 +44,7 @@ function HeaderHome() {
         }`}
     >
       <div className='flex items-center justify-between px-5 min-h-24 lg:px-7.5 xl:px-10 max-lg:py-4'>
-        <Link className='block w-[12rem] xl:mr-8' to='/home'>
+        <Link className='block w-[12rem] xl:mr-8' to='/jobs'>
           <img src={brainwave} width={190} height={40} alt='Brainwave' />
         </Link>
         {paths.includes(location.pathname) ? null : (

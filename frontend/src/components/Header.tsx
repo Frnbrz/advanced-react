@@ -65,7 +65,7 @@ function Header() {
           </nav>
         )}
         <div className='flex items-center'>
-          <Button className='hidden lg:flex' href='/home' white>
+          <Button className='hidden lg:flex' href='/jobs' white>
             Empezar
           </Button>
 
