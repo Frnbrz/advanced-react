@@ -1,10 +1,10 @@
 import smallSphere from './4-small.png'
-import brainwaveWhiteSymbol from './brainwave-symbol-white.svg'
-import brainwaveSymbol from './brainwave-symbol.svg'
-import brainwave from './brainwave.svg'
 import check2 from './check-02.svg'
 import check from './check.svg'
 import chromecast from './chrome-cast.svg'
+import devcodeWhiteSymbol from './devcode-symbol-white.svg'
+import devcodeSymbol from './devcode-symbol.svg'
+import devcode from './devcode.svg'
 import disc02 from './disc-02.svg'
 import file02 from './file-02.svg'
 import gradient from './gradient.png'
@@ -102,9 +102,6 @@ export {
   benefitIcon3,
   benefitIcon4,
   benefitImage2,
-  brainwave,
-  brainwaveSymbol,
-  brainwaveWhiteSymbol,
   check,
   check2,
   chromecast,
@@ -121,6 +118,9 @@ export {
   curve,
   curve1,
   curve2,
+  devcode,
+  devcodeSymbol,
+  devcodeWhiteSymbol,
   disc02,
   discord,
   discordBlack,

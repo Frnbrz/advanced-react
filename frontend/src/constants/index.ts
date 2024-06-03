@@ -111,13 +111,13 @@ export const companyLogos = [
   yourlogo5,
 ]
 
-export const brainwaveServices = [
+export const devcodeServices = [
   'Busqueda de empleo',
   'Solicitud de empleo',
   'Charla con empresas',
 ]
 
-export const brainwaveServicesIcons = [
+export const devcodeServicesIcons = [
   recording03,
   recording01,
   disc02,

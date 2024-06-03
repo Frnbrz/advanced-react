@@ -1,4 +1,4 @@
-import { brainwaveWhiteSymbol, gradient, play } from '../../assets'
+import { devcodeWhiteSymbol, gradient, play } from '../../assets'
 import ChatBubbleWing from '../../assets/svg/ChatBubbleWing'
 
 export const Gradient = () => {
@@ -29,10 +29,10 @@ export const VideoChatMessage = () => {
     <div className='absolute top-8 left-[3.125rem] w-full max-w-[60rem] pt-2.5 pr-2 pb-2.5 pl-5  bg-n-6 rounded-t-xl rounded-br-xl font-code text-base md:max-w-min flex flex-row items-center justify-center'>
       <div className='  flex  items-center justify-center w-[2.75rem] h-[2.25rem] bg-color-1 rounded-[0.75rem]'>
         <img
-          src={brainwaveWhiteSymbol}
+          src={devcodeWhiteSymbol}
           width={26}
           height={26}
-          alt='Brainwave'
+          alt='DevCode'
         />
       </div>
       <span

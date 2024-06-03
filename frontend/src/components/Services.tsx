@@ -1,4 +1,4 @@
-import { brainwaveServices } from "@/constants"
+import { devcodeServices } from "@/constants"
 import { check, service1, service2, service3 } from "../assets"
 import {
   Gradient,
@@ -39,7 +39,7 @@ const Services = () => {
                 Nueva forma de conectar con la empresa y realizar entrevistas de trabajo de forma remota y en tiempo real.
               </p>
               <ul className="body-2">
-                {brainwaveServices.map((item, index) => (
+                {devcodeServices.map((item, index) => (
                   <li
                     key={index}
                     className="flex items-start py-4 border-t border-n-6"

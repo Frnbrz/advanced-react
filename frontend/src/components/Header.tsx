@@ -2,7 +2,7 @@ import Button from '@/components/Button'
 import { Link, useLocation } from '@tanstack/react-router'
 import { useState } from 'react'
 import { disablePageScroll, enablePageScroll } from 'scroll-lock'
-import { brainwave } from '../assets'
+import { devcode } from '../assets'
 import MenuSvg from '../assets/svg/MenuSvg'
 import { navigation } from '../constants'
 import { HamburgerMenu } from './design/Header'
@@ -37,7 +37,7 @@ function Header() {
     >
       <div className='flex items-center justify-between px-5 min-h-24 lg:px-7.5 xl:px-10 max-lg:py-4'>
         <Link className='block w-[12rem] xl:mr-8' to='/'>
-          <img src={brainwave} width={190} height={40} alt='Brainwave' />
+          <img src={devcode} width={190} height={40} alt='devcode' />
         </Link>
         {paths.includes(location.pathname) ? null : (
           <nav

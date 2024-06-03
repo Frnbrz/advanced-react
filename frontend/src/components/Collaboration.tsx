@@ -1,4 +1,4 @@
-import { brainwaveSymbol, check } from "@/assets"
+import { check, devcodeSymbol } from "@/assets"
 import { collabApps, collabContent, collabText } from "@/constants"
 import Button from "./Button"
 import Section from "./Section"
@@ -46,17 +46,16 @@ const Collaboration = () => {
               <div className="w-[6rem] aspect-square m-auto p-[0.2rem] bg-gradient-to-br from-purple-400 to-gray-100 rounded-full">
                 <div className="flex items-center justify-center w-full h-full bg-n-7 rounded-full">
                   <img
-                    src={brainwaveSymbol}
+                    src={devcodeSymbol}
                     width={48}
                     height={48}
-                    alt="brainwave"
+                    alt="devcode"
                   />
                 </div>
               </div>
             </div>
 
 
-            {/* collabs apps icons spinning around the brainwave */}
 
             <ul >
               {collabApps.map((app, index) => (
