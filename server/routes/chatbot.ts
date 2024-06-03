@@ -3,8 +3,6 @@ import { Hono } from 'hono'
 export const chatbotRoute = new Hono().get('/', async c => {
   const message = c.req.query('message')
 
-  console.log('Message:', message)
-
   const responses: { [key: string]: string } = {
     hello: 'Hola, ¿en qué puedo ayudarte?',
     start:

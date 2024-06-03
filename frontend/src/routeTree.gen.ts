@@ -22,6 +22,9 @@ const JobsLazyImport = createFileRoute('/jobs')()
 const AuthenticatedProfileLazyImport = createFileRoute(
   '/_authenticated/profile',
 )()
+const AuthenticatedInterviewLazyImport = createFileRoute(
+  '/_authenticated/interview',
+)()
 const AuthenticatedExpensesLazyImport = createFileRoute(
   '/_authenticated/expenses',
 )()
@@ -55,6 +58,15 @@ const AuthenticatedProfileLazyRoute = AuthenticatedProfileLazyImport.update({
   getParentRoute: () => AuthenticatedRoute,
 } as any).lazy(() =>
   import('./routes/_authenticated/profile.lazy').then((d) => d.Route),
+)
+
+const AuthenticatedInterviewLazyRoute = AuthenticatedInterviewLazyImport.update(
+  {
+    path: '/interview',
+    getParentRoute: () => AuthenticatedRoute,
+  } as any,
+).lazy(() =>
+  import('./routes/_authenticated/interview.lazy').then((d) => d.Route),
 )
 
 const AuthenticatedExpensesLazyRoute = AuthenticatedExpensesLazyImport.update({
@@ -134,6 +146,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedExpensesLazyImport
       parentRoute: typeof AuthenticatedImport
     }
+    '/_authenticated/interview': {
+      id: '/_authenticated/interview'
+      path: '/interview'
+      fullPath: '/interview'
+      preLoaderRoute: typeof AuthenticatedInterviewLazyImport
+      parentRoute: typeof AuthenticatedImport
+    }
     '/_authenticated/profile': {
       id: '/_authenticated/profile'
       path: '/profile'
@@ -159,6 +178,7 @@ export const routeTree = rootRoute.addChildren({
     AuthenticatedApplyLazyRoute,
     AuthenticatedCreateExpenseLazyRoute,
     AuthenticatedExpensesLazyRoute,
+    AuthenticatedInterviewLazyRoute,
     AuthenticatedProfileLazyRoute,
     AuthenticatedJobsJobIdLazyRoute,
   }),
@@ -187,6 +207,7 @@ export const routeTree = rootRoute.addChildren({
         "/_authenticated/apply",
         "/_authenticated/create-expense",
         "/_authenticated/expenses",
+        "/_authenticated/interview",
         "/_authenticated/profile",
         "/_authenticated/jobs/$jobId"
       ]
@@ -204,6 +225,10 @@ export const routeTree = rootRoute.addChildren({
     },
     "/_authenticated/expenses": {
       "filePath": "_authenticated/expenses.lazy.tsx",
+      "parent": "/_authenticated"
+    },
+    "/_authenticated/interview": {
+      "filePath": "_authenticated/interview.lazy.tsx",
       "parent": "/_authenticated"
     },
     "/_authenticated/profile": {
