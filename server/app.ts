@@ -17,8 +17,8 @@ const apiRoutes = app
   .route('/chatbot', chatbotRoute)
   .route('/', authRoute)
 
-app.use('*', serveStatic({ root: './frontend/dist' }))
-app.use('*', serveStatic({ root: './frontend/dist/index.html' }))
+app.get('*', serveStatic({ root: './frontend/dist' }))
+app.get('*', serveStatic({ path: './frontend/dist/index.html' }))
 
 export default app
 export type ApiRoutes = typeof apiRoutes
