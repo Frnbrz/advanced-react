@@ -9,7 +9,7 @@ import { createJob, getAllJobsQueryOptions, loadingJobsNavigationOptions } from 
 import { createJobSchema } from "@server/sharedTypes"
 import { FieldApi, useForm } from '@tanstack/react-form'
 import { useQueryClient } from "@tanstack/react-query"
-import { createLazyFileRoute, useNavigate } from '@tanstack/react-router'
+import { createFileRoute, useNavigate } from '@tanstack/react-router'
 import { zodValidator } from '@tanstack/zod-form-adapter'
 
 import { toast } from "sonner"
@@ -29,7 +29,7 @@ function FieldInfo({ field }: { field: FieldApi<any, any, any, any, any> }) {
   )
 }
 
-export const Route = createLazyFileRoute('/_authenticated/create-expense')({
+export const Route = createFileRoute('/_authenticated/create-expense')({
   component: CreateJob,
 })
 

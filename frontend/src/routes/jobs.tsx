@@ -13,11 +13,11 @@ import {
 } from '@/components/ui/card'
 import { getAllJobsQueryOptions, loadingJobsNavigationOptions, navigateJobDetails } from '@/lib/api'
 import { useQuery, useQueryClient } from '@tanstack/react-query'
-import { createLazyFileRoute, useNavigate } from '@tanstack/react-router'
+import { createFileRoute, useNavigate } from '@tanstack/react-router'
 
 
 
-export const Route = createLazyFileRoute('/jobs')({
+export const Route = createFileRoute('/jobs')({
   component: Jobs,
 })
 

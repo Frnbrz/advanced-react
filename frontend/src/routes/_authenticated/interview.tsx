@@ -4,9 +4,9 @@ import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
 import { userQueryOptions } from '@/lib/api'
 import { useQuery } from '@tanstack/react-query'
-import { createLazyFileRoute } from '@tanstack/react-router'
+import { createFileRoute } from '@tanstack/react-router'
 
-export const Route = createLazyFileRoute('/_authenticated/interview')({
+export const Route = createFileRoute('/_authenticated/interview')({
   component: Interview,
 })
 

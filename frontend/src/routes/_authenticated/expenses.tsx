@@ -16,10 +16,10 @@ import {
 } from '@/lib/api'
 import { TrashIcon } from "@radix-ui/react-icons"
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
-import { createLazyFileRoute } from '@tanstack/react-router'
+import { createFileRoute } from '@tanstack/react-router'
 import { toast } from 'sonner'
 
-export const Route = createLazyFileRoute('/_authenticated/expenses')({
+export const Route = createFileRoute('/_authenticated/expenses')({
   component: Expenses,
 })
 

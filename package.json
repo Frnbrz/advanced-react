@@ -1,11 +1,10 @@
 {
-  "name": "advanced-react",
-  "module": "index.ts",
+  "name": "devcode",
+  "module": "server/index.ts",
   "type": "module",
   "scripts": {
     "start": "bun server/index.ts",
-    "dev": "bun --watch server/index.ts",
-    "drizzle": "bunx drizzle-kit studio"
+    "dev": "bun --watch server/index.ts"
   },
   "devDependencies": {
     "@flydotio/dockerfile": "^0.5.7",

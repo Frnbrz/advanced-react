@@ -5,9 +5,9 @@ import Section from '@/components/Section'
 import { Skeleton } from '@/components/ui/skeleton'
 import { loadingJobsNavigationOptions } from '@/lib/api'
 import { useQuery } from '@tanstack/react-query'
-import { createLazyFileRoute } from '@tanstack/react-router'
+import { createFileRoute } from '@tanstack/react-router'
 
-export const Route = createLazyFileRoute('/_authenticated/jobs/$jobId')({
+export const Route = createFileRoute('/_authenticated/jobs/$jobId')({
   component: JobId,
 })
 
