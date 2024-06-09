@@ -135,8 +135,9 @@ export const LANGUAGES = {
 }
 
 export const CODE_SNIPPETS = {
-  javascript: `\nfunction greet(name) {\n\tconsole.log("¡" + "Hola, " + name + "!");\n}\n\ngreet("Fran");\n`,
-  typescript: `\nfunction greet(name: string): void {\n\tconsole.log("¡" + "Hola, " + name + "!");\n}\n\ngreet("Fran");\n`,
+  javascript: `\nfunction sum(n,n2) {\n\t// Aqui va tu codigo
+  \n}\n\nconsole.log(sum(2,3));\n`,
+  typescript: `\nfunction sum(name: string): void {\n\tconsole.log("¡" + "Hola, " + name + "!");\n}\n\ngreet("Fran");\n`,
   python: `\ndef greet(name):\n\tprint("¡Hola, " + name + "!")\n\ngreet("Fran")\n`,
   java: `\npublic class Main {\n\tpublic static void main(String[] args) {\n\t\tSystem.out.println("¡Hola, Mundo!");\n\t}\n}\n`,
   go: `\npackage main\n\nimport "fmt"\n\nfunc main() {\n\tfmt.Println("¡Hola, Mundo!")\n}\n`,
