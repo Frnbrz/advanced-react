@@ -49,9 +49,10 @@ function Jobs() {
       getAllJobsQueryOptions
     )
 
-    navigate({ to: `/jobs/${job.id}` })
+    window.localStorage.setItem('job', JSON.stringify(job))
 
-    // loading state
+    await navigate({ to: `/jobs/${job.id}` })
+
     queryClient.setQueryData(loadingJobsNavigationOptions.queryKey, {
       job: {
         ...job
@@ -60,9 +61,7 @@ function Jobs() {
 
     try {
       const newJob = await navigateJobDetails({
-        job: {
-          ...job
-        },
+        job
       })
 
       queryClient.setQueryData(getAllJobsQueryOptions.queryKey, {

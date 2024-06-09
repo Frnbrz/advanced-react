@@ -16,8 +16,8 @@ import { Route as AuthenticatedImport } from './routes/_authenticated'
 import { Route as IndexImport } from './routes/index'
 import { Route as AuthenticatedProfileImport } from './routes/_authenticated/profile'
 import { Route as AuthenticatedInterviewImport } from './routes/_authenticated/interview'
-import { Route as AuthenticatedExpensesImport } from './routes/_authenticated/expenses'
-import { Route as AuthenticatedCreateExpenseImport } from './routes/_authenticated/create-expense'
+import { Route as AuthenticatedCreateJobImport } from './routes/_authenticated/create-job'
+import { Route as AuthenticatedCodeImport } from './routes/_authenticated/code'
 import { Route as AuthenticatedApplyImport } from './routes/_authenticated/apply'
 import { Route as AuthenticatedJobsJobIdImport } from './routes/_authenticated/jobs.$jobId'
 
@@ -48,17 +48,15 @@ const AuthenticatedInterviewRoute = AuthenticatedInterviewImport.update({
   getParentRoute: () => AuthenticatedRoute,
 } as any)
 
-const AuthenticatedExpensesRoute = AuthenticatedExpensesImport.update({
-  path: '/expenses',
+const AuthenticatedCreateJobRoute = AuthenticatedCreateJobImport.update({
+  path: '/create-job',
   getParentRoute: () => AuthenticatedRoute,
 } as any)
 
-const AuthenticatedCreateExpenseRoute = AuthenticatedCreateExpenseImport.update(
-  {
-    path: '/create-expense',
-    getParentRoute: () => AuthenticatedRoute,
-  } as any,
-)
+const AuthenticatedCodeRoute = AuthenticatedCodeImport.update({
+  path: '/code',
+  getParentRoute: () => AuthenticatedRoute,
+} as any)
 
 const AuthenticatedApplyRoute = AuthenticatedApplyImport.update({
   path: '/apply',
@@ -102,18 +100,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedApplyImport
       parentRoute: typeof AuthenticatedImport
     }
-    '/_authenticated/create-expense': {
-      id: '/_authenticated/create-expense'
-      path: '/create-expense'
-      fullPath: '/create-expense'
-      preLoaderRoute: typeof AuthenticatedCreateExpenseImport
+    '/_authenticated/code': {
+      id: '/_authenticated/code'
+      path: '/code'
+      fullPath: '/code'
+      preLoaderRoute: typeof AuthenticatedCodeImport
       parentRoute: typeof AuthenticatedImport
     }
-    '/_authenticated/expenses': {
-      id: '/_authenticated/expenses'
-      path: '/expenses'
-      fullPath: '/expenses'
-      preLoaderRoute: typeof AuthenticatedExpensesImport
+    '/_authenticated/create-job': {
+      id: '/_authenticated/create-job'
+      path: '/create-job'
+      fullPath: '/create-job'
+      preLoaderRoute: typeof AuthenticatedCreateJobImport
       parentRoute: typeof AuthenticatedImport
     }
     '/_authenticated/interview': {
@@ -146,8 +144,8 @@ export const routeTree = rootRoute.addChildren({
   IndexRoute,
   AuthenticatedRoute: AuthenticatedRoute.addChildren({
     AuthenticatedApplyRoute,
-    AuthenticatedCreateExpenseRoute,
-    AuthenticatedExpensesRoute,
+    AuthenticatedCodeRoute,
+    AuthenticatedCreateJobRoute,
     AuthenticatedInterviewRoute,
     AuthenticatedProfileRoute,
     AuthenticatedJobsJobIdRoute,
@@ -175,8 +173,8 @@ export const routeTree = rootRoute.addChildren({
       "filePath": "_authenticated.tsx",
       "children": [
         "/_authenticated/apply",
-        "/_authenticated/create-expense",
-        "/_authenticated/expenses",
+        "/_authenticated/code",
+        "/_authenticated/create-job",
         "/_authenticated/interview",
         "/_authenticated/profile",
         "/_authenticated/jobs/$jobId"
@@ -189,12 +187,12 @@ export const routeTree = rootRoute.addChildren({
       "filePath": "_authenticated/apply.tsx",
       "parent": "/_authenticated"
     },
-    "/_authenticated/create-expense": {
-      "filePath": "_authenticated/create-expense.tsx",
+    "/_authenticated/code": {
+      "filePath": "_authenticated/code.tsx",
       "parent": "/_authenticated"
     },
-    "/_authenticated/expenses": {
-      "filePath": "_authenticated/expenses.tsx",
+    "/_authenticated/create-job": {
+      "filePath": "_authenticated/create-job.tsx",
       "parent": "/_authenticated"
     },
     "/_authenticated/interview": {

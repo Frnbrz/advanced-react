@@ -8,7 +8,7 @@ export const Route = createFileRoute('/_authenticated')({
   beforeLoad: async ({ context }) => {
     const queryClient = context.queryClient
     try {
-      const data = await queryClient.fetchQuery(userQueryOptions)
+      const data = await queryClient.fetchQuery(userQueryOptions) || null
       return data
     } catch (error) {
       return { user: null }
@@ -20,14 +20,14 @@ export const Route = createFileRoute('/_authenticated')({
 
 
 function Component() {
-  const { user } = Route.useRouteContext()
+  // Safely access the context, ensuring it's an object before destructuring
+  const context = Route.useRouteContext() || {}
+  const { user = null } = context
 
   if (!user) {
     return <Login />
   } else {
-    return (
-      <Outlet />
-    )
+    return <Outlet />
   }
 }
 

@@ -3,22 +3,42 @@ import Button from '@/components/Button'
 import Heading from '@/components/Heading'
 import Section from '@/components/Section'
 import { Skeleton } from '@/components/ui/skeleton'
-import { loadingJobsNavigationOptions } from '@/lib/api'
-import { useQuery } from '@tanstack/react-query'
-import { createFileRoute } from '@tanstack/react-router'
+import { interviewData, loadingJobsNavigationOptions } from '@/lib/api'
+import { useQuery, useQueryClient } from '@tanstack/react-query'
+import { createFileRoute, useNavigate } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/_authenticated/jobs/$jobId')({
   component: JobId,
 })
 
 function JobId() {
-
-
-
+  const queryClient = useQueryClient()
+  const navigate = useNavigate()
+  let jobLocalStorage: { job: string | null } = { job: null }
   const { data: loadingJobNavigation } = useQuery(
     loadingJobsNavigationOptions
   )
-  if (!loadingJobNavigation?.job) return (
+
+  // Intenta obtener la oferta de trabajo de localStorage si no está disponible a través de useQuery
+  if (!loadingJobNavigation?.job) {
+    const jobFromLocalStorage = window.localStorage.getItem('job')
+    if (jobFromLocalStorage) {
+      jobLocalStorage.job = JSON.parse(jobFromLocalStorage)
+    }
+  }
+
+  // Verifica si hay alguna oferta de trabajo disponible
+  const jobAvailable = loadingJobNavigation?.job || jobLocalStorage.job
+
+  async function startInterview() {
+
+    queryClient.setQueryData(interviewData.queryKey, {
+      state: 0
+    })
+    await navigate({ to: `/interview` })
+  }
+
+  if (!jobAvailable) return (
     <Section
       crossesOffset='lg:translate-y-[5.25rem]'
       id='jobs-details'
@@ -92,18 +112,20 @@ function JobId() {
         <div className="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-12 h-[80vh]
         lg:h-[66vh]">
 
-          {!loadingJobNavigation?.job ? (
+          {!jobAvailable ? (
             <div className="mx-auto aspect-video overflow-hidden rounded-xl">
               <Skeleton className="h-full w-full" />
             </div>
-          ) : (
-            <img
-              src={`/companies/${loadingJobNavigation?.job?.img}.jpeg`}
-              alt="Job Image"
-              className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
-            />
-          )}
-          {!loadingJobNavigation?.job ? (
+          ) :
+            jobAvailable && typeof jobAvailable !== 'string' && (
+              <img
+                src={`/companies/${jobAvailable.img}.jpeg`}
+                alt="Job Image"
+                className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
+              />
+            )
+          }
+          {!jobAvailable ? (
             <div className="space-y-4">
               <Skeleton className="h-6 w-32" />
               <Skeleton className="h-8 w-80" />
@@ -138,20 +160,20 @@ function JobId() {
 
                 <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
                   <BuildingIcon className="h-4 w-4" />
-                  {loadingJobNavigation?.job?.company}
+                  {jobAvailable && typeof jobAvailable !== 'string' && jobAvailable?.company}
                 </div>
                 <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
                   <LocateIcon className="h-4 w-4" />
-                  {loadingJobNavigation?.job?.city}
+                  {jobAvailable && typeof jobAvailable !== 'string' && jobAvailable?.city}
                 </div>
                 <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
                   <CodeIcon className="h-4 w-4" />
-                  {loadingJobNavigation?.job?.skills}
+                  {jobAvailable && typeof jobAvailable !== 'string' && jobAvailable?.skills}
                 </div>
 
                 <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
                   <BriefcaseIcon className="h-4 w-4" />
-                  {loadingJobNavigation?.job?.modality}
+                  {jobAvailable && typeof jobAvailable !== 'string' && jobAvailable?.modality}
                 </div>
                 <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
                   Join our growing team and help us build the next generation of web applications. You'll work on a
@@ -159,7 +181,7 @@ function JobId() {
                   technologies and frameworks.
                 </p>
               </div>
-              <Button white >
+              <Button white onClick={startInterview}>
                 Realizar oferta
               </Button>
             </div>

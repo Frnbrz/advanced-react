@@ -1,3 +1,4 @@
+import { LANGUAGES } from '@/constants'
 import { type ApiRoutes } from '@server/app'
 import { type CreateExpense, type CreateJob } from '@server/sharedTypes'
 import { queryOptions } from '@tanstack/react-query'
@@ -96,6 +97,16 @@ export const loadingCreateExpenseQueryOptions = queryOptions<{
   staleTime: Infinity,
 })
 
+export const interviewData = queryOptions<{
+  state: number
+}>({
+  queryKey: ['interview-data'],
+  queryFn: async () => {
+    return { state: 0 }
+  },
+  staleTime: Infinity,
+})
+
 export async function navigateJobDetails({ job }: { job: CreateJob }) {
   await new Promise(resolve => setTimeout(resolve, 3000))
   const res = await api.jobs.$post({ json: job })
@@ -114,15 +125,45 @@ export const loadingJobsNavigationOptions = queryOptions<{
   queryFn: async () => {
     return {}
   },
-  staleTime: Infinity,
+  staleTime: 1000 * 60 * 5,
 })
 
-export const deleteExpense = async ({ id }: { id: number }) => {
-  await new Promise(r => setTimeout(r, 3000))
-  const res = await api.expenses[':id{[0-9]+}'].$delete({
-    param: { id: id.toString() },
+export async function executeCode(sourceCode: string, language: string) {
+  const res = await fetch('https://emkc.org/api/v2/piston/execute', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      language: language,
+      version: LANGUAGES[language as keyof typeof LANGUAGES],
+      files: [
+        {
+          content: sourceCode,
+        },
+      ],
+    }),
   })
+
   if (!res.ok) {
-    throw new Error('Failed to delete expense')
+    throw new Error('Failed to execute code')
   }
+  return await res.json()
 }
+
+// const API = axios.create({
+//   baseURL: 'https://emkc.org/api/v2/piston',
+// })
+
+// export async function executeCode(sourceCode: string, language: string) {
+//   const response = await API.post('/execute', {
+//     language,
+//     version: LANGUAGES[language as keyof typeof LANGUAGES],
+//     files: [
+//       {
+//         content: sourceCode,
+//       },
+//     ],
+//   })
+//   return response.data
+// }
