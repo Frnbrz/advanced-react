@@ -31,8 +31,8 @@ function Output({ editorRef, language, }: OutputProps) {
       setOutput(result.output.split('\n'))
 
       if (Number(result.output) === 5) {
+        console.log('is over')
         setIsOver(true)
-
 
       }
       result.stderr ? setIsError(true) : setIsError(false)

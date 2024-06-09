@@ -11,15 +11,15 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
-import { Route as JobsImport } from './routes/jobs'
 import { Route as AuthenticatedImport } from './routes/_authenticated'
-import { Route as IndexImport } from './routes/index'
-import { Route as AuthenticatedProfileImport } from './routes/_authenticated/profile'
-import { Route as AuthenticatedInterviewImport } from './routes/_authenticated/interview'
-import { Route as AuthenticatedCreateJobImport } from './routes/_authenticated/create-job'
-import { Route as AuthenticatedCodeImport } from './routes/_authenticated/code'
 import { Route as AuthenticatedApplyImport } from './routes/_authenticated/apply'
+import { Route as AuthenticatedCodeImport } from './routes/_authenticated/code'
+import { Route as AuthenticatedCreateJobImport } from './routes/_authenticated/create-job'
+import { Route as AuthenticatedInterviewImport } from './routes/_authenticated/interview'
 import { Route as AuthenticatedJobsJobIdImport } from './routes/_authenticated/jobs.$jobId'
+import { Route as AuthenticatedProfileImport } from './routes/_authenticated/profile'
+import { Route as IndexImport } from './routes/index'
+import { Route as JobsImport } from './routes/jobs'
 
 // Create/Update Routes
 
@@ -49,7 +49,7 @@ const AuthenticatedInterviewRoute = AuthenticatedInterviewImport.update({
 } as any)
 
 const AuthenticatedCreateJobRoute = AuthenticatedCreateJobImport.update({
-  path: '/create-job',
+  path: '/create',
   getParentRoute: () => AuthenticatedRoute,
 } as any)
 
@@ -107,10 +107,10 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedCodeImport
       parentRoute: typeof AuthenticatedImport
     }
-    '/_authenticated/create-job': {
-      id: '/_authenticated/create-job'
-      path: '/create-job'
-      fullPath: '/create-job'
+    '/_authenticated/create': {
+      id: '/_authenticated/create'
+      path: '/create'
+      fullPath: '/create'
       preLoaderRoute: typeof AuthenticatedCreateJobImport
       parentRoute: typeof AuthenticatedImport
     }

@@ -29,7 +29,7 @@ function FieldInfo({ field }: { field: FieldApi<any, any, any, any, any> }) {
   )
 }
 
-export const Route = createFileRoute('/_authenticated/create-job')({
+export const Route = createFileRoute('/_authenticated/create')({
   component: CreateJob,
 })
 
