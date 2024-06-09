@@ -11,15 +11,15 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
-import { Route as AuthenticatedImport } from './routes/_authenticated'
-import { Route as AuthenticatedApplyImport } from './routes/_authenticated/apply'
-import { Route as AuthenticatedCodeImport } from './routes/_authenticated/code'
-import { Route as AuthenticatedCreateJobImport } from './routes/_authenticated/create-job'
-import { Route as AuthenticatedInterviewImport } from './routes/_authenticated/interview'
-import { Route as AuthenticatedJobsJobIdImport } from './routes/_authenticated/jobs.$jobId'
-import { Route as AuthenticatedProfileImport } from './routes/_authenticated/profile'
-import { Route as IndexImport } from './routes/index'
 import { Route as JobsImport } from './routes/jobs'
+import { Route as AuthenticatedImport } from './routes/_authenticated'
+import { Route as IndexImport } from './routes/index'
+import { Route as AuthenticatedProfileImport } from './routes/_authenticated/profile'
+import { Route as AuthenticatedInterviewImport } from './routes/_authenticated/interview'
+import { Route as AuthenticatedCreateImport } from './routes/_authenticated/create'
+import { Route as AuthenticatedCodeImport } from './routes/_authenticated/code'
+import { Route as AuthenticatedApplyImport } from './routes/_authenticated/apply'
+import { Route as AuthenticatedJobsJobIdImport } from './routes/_authenticated/jobs.$jobId'
 
 // Create/Update Routes
 
@@ -48,7 +48,7 @@ const AuthenticatedInterviewRoute = AuthenticatedInterviewImport.update({
   getParentRoute: () => AuthenticatedRoute,
 } as any)
 
-const AuthenticatedCreateJobRoute = AuthenticatedCreateJobImport.update({
+const AuthenticatedCreateRoute = AuthenticatedCreateImport.update({
   path: '/create',
   getParentRoute: () => AuthenticatedRoute,
 } as any)
@@ -111,7 +111,7 @@ declare module '@tanstack/react-router' {
       id: '/_authenticated/create'
       path: '/create'
       fullPath: '/create'
-      preLoaderRoute: typeof AuthenticatedCreateJobImport
+      preLoaderRoute: typeof AuthenticatedCreateImport
       parentRoute: typeof AuthenticatedImport
     }
     '/_authenticated/interview': {
@@ -145,7 +145,7 @@ export const routeTree = rootRoute.addChildren({
   AuthenticatedRoute: AuthenticatedRoute.addChildren({
     AuthenticatedApplyRoute,
     AuthenticatedCodeRoute,
-    AuthenticatedCreateJobRoute,
+    AuthenticatedCreateRoute,
     AuthenticatedInterviewRoute,
     AuthenticatedProfileRoute,
     AuthenticatedJobsJobIdRoute,
@@ -174,7 +174,7 @@ export const routeTree = rootRoute.addChildren({
       "children": [
         "/_authenticated/apply",
         "/_authenticated/code",
-        "/_authenticated/create-job",
+        "/_authenticated/create",
         "/_authenticated/interview",
         "/_authenticated/profile",
         "/_authenticated/jobs/$jobId"
@@ -191,8 +191,8 @@ export const routeTree = rootRoute.addChildren({
       "filePath": "_authenticated/code.tsx",
       "parent": "/_authenticated"
     },
-    "/_authenticated/create-job": {
-      "filePath": "_authenticated/create-job.tsx",
+    "/_authenticated/create": {
+      "filePath": "_authenticated/create.tsx",
       "parent": "/_authenticated"
     },
     "/_authenticated/interview": {
